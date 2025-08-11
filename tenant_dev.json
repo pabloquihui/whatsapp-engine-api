@@ -1,0 +1,16 @@
+[{"tenant_id":"demo", 
+"display_name":"Demo", 
+"waba_id":"", 
+"phone_number_id":"", 
+"verify_token":"", 
+"app_secret":"", 
+"access_token":"", 
+"engine": {
+    "type": "mistral",
+    "config": {
+      "model": "mistral-medium-latest", 
+      "temperature": 0.7,
+      "timeout": 20,
+      "system_prompt": "Eres un asistente por WhatsApp. Responde en español." }
+  },
+"status":"active"}]
