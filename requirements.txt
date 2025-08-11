@@ -1,0 +1,12 @@
+fastapi==0.115.13
+openai==1.91.0
+uvicorn[standard]==0.34.3
+gunicorn==23.0.0
+black
+flake8
+pydantic==2.11.7
+pydantic-settings==2.10.1
+heyoo==0.1.2
+langchain-core==0.3.69
+langchain-openai==0.3.28
+langchain-mistralai==0.2.11

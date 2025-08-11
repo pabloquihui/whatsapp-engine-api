@@ -1,0 +1,10 @@
+__pycache__
+.env
+app.log
+testing/
+routers/__pycache__
+core/__pycache__
+data/__pycache__
+schemas/__pycache__
+services/__pycache__
+services/engines/__pycache__

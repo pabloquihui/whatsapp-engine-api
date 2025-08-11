@@ -1,0 +1,48 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  pythonVersion: '3.10'
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(pythonVersion)'
+      addToPath: true
+
+  - script: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+    displayName: 'Install dependencies'
+
+  - script: |
+      black .
+    displayName: '🧹 Check formatting with black'
+
+  # - script: |
+  #     flake8 .
+  #   displayName: '🔍 Lint code with flake8'
+  # Optional: Once we have tests, we can include it here
+  # - script: |
+  #     pytest tests/
+  #   displayName: 'Run tests'
+
+  # Optional: Build Docker image
+  # - task: Docker@2
+  #   inputs:
+  #     containerRegistry: '<your-azure-container-registry-service-connection>'
+  #     repository: '<your-image-name>'
+  #     command: 'buildAndPush'
+  #     Dockerfile: '**/Dockerfile'
+  #     tags: latest
